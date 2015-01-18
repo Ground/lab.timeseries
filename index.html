@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <script src="js/angular.min.js"></script>
+    <link rel="stylesheet" href="css/style.css" />
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+    <div ng-app="timeseries">
+        <div ng-controller="numController">
+            <p>Числа:
+                <input type="text" ng-model="numbers">
+            </p>
+            <p>Введено: {{retarr()}}</p>
+            <ul>
+                <li ng-repeat="num in retarr() track by $index">
+                    {{num}}
+                     
+                </li>
+            </ul>
+
+            {{numNumbers}}
+
+           <highchart id="chart1" config="chartConfig" class="span10">
+           </highchart>
+            
+        </div>
+
+    </div>
+
+    
+    <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/d3/3.3.11/d3.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+    
+    
+    <script type="text/javascript" src="http://code.highcharts.com/highcharts.js"></script>
+    
+    <script type="text/javascript" src="https://rawgithub.com/pablojim/highcharts-ng/master/dist/highcharts-ng.js"></script>
+
+
+    <script src="js/app.js"></script>
+    <script src="js/controllers/numController.js"></script>
+
+</body>
+
+</html>
